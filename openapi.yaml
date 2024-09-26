@@ -7860,9 +7860,7 @@ paths:
                               -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
                               -H "Content-Type: application/json" \
                               -d '{
-                                  "name": "Project ABC",
-                                  "app_use_case": "Your project use case here",
-                                  "business_website": "https://example.com"
+                                  "name": "Project ABC"
                               }'
                     response:
                         content: |
@@ -7872,9 +7870,7 @@ paths:
                                 "name": "Project ABC",
                                 "created_at": 1711471533,
                                 "archived_at": null,
-                                "status": "active",
-                                "app_use_case": "Your project use case here",
-                                "business_website": "https://example.com"
+                                "status": "active"
                             }
 
     /organization/projects/{project_id}:
@@ -7955,9 +7951,7 @@ paths:
                               -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
                               -H "Content-Type: application/json" \
                               -d '{
-                                  "name": "Project DEF",
-                                  "app_use_case": "Your project use case here",
-                                  "business_website": "https://example.com"
+                                  "name": "Project DEF"
                               }'
 
     /organization/projects/{project_id}/archive:
@@ -16133,12 +16127,6 @@ components:
                     type: string
                     enum: [active, archived]
                     description: "`active` or `archived`"
-                app_use_case:
-                    type: string
-                    description: A description of your business, project, or use case. [Why we need this information](https://help.openai.com/en/articles/9824607-api-platform-verifications).
-                business_website:
-                    type: string
-                    description: Your business URL, or if you don't have one yet, a URL to your LinkedIn or other social media. [Why we need this information](https://help.openai.com/en/articles/9824607-api-platform-verifications).
             required:
                 - id
                 - object
@@ -16154,9 +16142,7 @@ components:
                         "name": "Project example",
                         "created_at": 1711471533,
                         "archived_at": null,
-                        "status": "active",
-                        "app_use_case": "Your project use case here",
-                        "business_website": "https://example.com"
+                        "status": "active"
                     }
         
         ProjectListResponse:
@@ -16188,12 +16174,6 @@ components:
                 name:
                     type: string
                     description: The friendly name of the project, this name appears in reports.
-                app_use_case:
-                    type: string
-                    description: A description of your business, project, or use case. [Why we need this information](https://help.openai.com/en/articles/9824607-api-platform-verifications).
-                business_website:
-                    type: string
-                    description: Your business URL, or if you don't have one yet, a URL to your LinkedIn or other social media. [Why we need this information](https://help.openai.com/en/articles/9824607-api-platform-verifications).
             required:
                 - name
 
@@ -16203,12 +16183,6 @@ components:
                 name:
                     type: string
                     description: The updated name of the project, this name appears in reports.
-                app_use_case:
-                    type: string
-                    description: A description of your business, project, or use case. [Why we need this information](https://help.openai.com/en/articles/9824607-api-platform-verifications).
-                business_website:
-                    type: string
-                    description: Your business URL, or if you don't have one yet, a URL to your LinkedIn or other social media. [Why we need this information](https://help.openai.com/en/articles/9824607-api-platform-verifications).
             required:
                 - name
 
